@@ -1,0 +1,604 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+    line-height: 1.5;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+a{
+    text-decoration: none;
+}
+
+span{
+    color: var(--primary-color);
+}
+
+:root{
+    --primary-color:#FAC22E;
+    --secondary-color: #161627;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-family: "Poppins", sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    border: 1px solid #d5d5d5;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: #eeeeee;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: #b0b0b0;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+/* Typography for mobile screen starts here */
+h1,h2{
+    font-family: "Poppins", sans-serif;
+    color: #161627;
+}
+
+h1{
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: normal;
+}
+
+h2{
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-style: normal;
+}
+
+h3{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+body{
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #444;
+}
+/* Typography for mobile screen ends here */
+
+
+/* Typograpy for ipad screen  */
+@media (min-width:1242px) and (max-width:1578px) {
+    h1,h2{
+        font-family: "Poppins", sans-serif;
+        color: #161627;
+    }
+    h1{
+        font-size: 3rem;
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    h2{
+        font-size: 2rem;
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    h3{
+        font-family: "Montserrat", sans-serif;
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    body{
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        color: #444;
+    }
+}
+
+
+/* Typography for web screen starts here */
+@media screen and (min-width:1578px) {
+    h1,h2{
+        font-family: "Poppins", sans-serif;
+        color: #161627;
+    }
+    h1{
+        font-size: 4rem;
+        font-weight: bold;
+        font-style: normal;
+    }
+    
+    h2{
+        font-size: 3rem;
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    h3{
+        font-family: "Montserrat", sans-serif;
+        font-size: 2rem;
+        font-weight: 100;
+        font-style: normal;
+    }
+
+    body{
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.8rem;
+        font-weight: normal;
+        font-style: normal;
+        color: #444;
+    }
+}
+
+/* Header  */
+.header{
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    top: 0;
+    background: white;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 0 4px lightgray;
+}
+
+.header-logo{
+    padding: 2.5rem 5rem;  
+    margin: auto;
+}
+
+.header-logo img{
+    width: 2.5rem;
+    height: 3.7rem;
+}
+
+.toggler{
+    display: none;
+}
+
+.menu-desktop{
+    display: flex;
+    list-style: none;
+    color: white;
+    
+}
+
+.menu-desktop li{
+    padding: 5rem 6.3rem 5rem 0;
+}
+
+.menu-desktop a{
+    text-decoration: none;
+    color: #000;
+}
+
+@media (min-width:1024px) and (max-width:1228px) {
+    .menu-desktop h3{
+        font-size: 1.8rem;
+    }
+}
+
+
+
+
+
+/* Handburber making for mobile screen   */
+@media (min-width: 0px) and (max-width: 900px) {
+    .menu-wrap{
+        position: fixed;
+        top: 1rem;
+        right: 5rem;
+        z-index: 1;
+    }
+    
+    .menu-wrap .toggler{
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    
+    .menu-wrap .hamburger{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+    }
+    
+    /* Handburger line  */
+    .menu-wrap .hamburger > div{
+        position: relative;
+        width: 50%;
+        height: 3px;
+        background-color: var(--primary-color);
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+    }
+    
+    
+    .menu-wrap .hamburger > div:before,
+    .menu-wrap .hamburger > div:after{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -10px;
+        width: 100%;
+        height: 2px;
+        background: inherit;
+    }
+    
+    .menu-wrap .hamburger > div:after{
+        top: 10px;
+    }
+    
+    .menu-wrap .toggler:checked + .hamburger > div {
+        transform:  rotate(135deg);
+    }
+    
+    .menu-wrap .toggler:checked + .hamburger > div::before,
+    .menu-wrap .toggler:checked + .hamburger > div::after{
+        top: 0;
+        transform: rotate(90deg);
+    }
+    
+    .menu-wrap .toggler:checked:hover + .hamburger > div{
+        transform: rotate(225deg);
+    }
+    
+    /* SHOW MENU  */
+    .menu-wrap .toggler:checked ~ .menu {
+        visibility: visible;
+    }
+    
+    
+    .menu-wrap .toggler:checked ~ .hamburger > div{
+        background-color: var(--secondary-color);
+    }
+    
+    .menu-wrap .toggler:checked ~ .menu > div{
+        transform: scale(1);
+        transition-duration: 0.75s;
+    }
+    
+    .menu-wrap .toggler:checked ~ .menu > div > div{
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+    
+    .menu-wrap .menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menu-wrap .menu > div{
+        background: var(--primary-color);
+        border-radius: 30%;
+        width: 200vw;
+        height: 400vw;
+        display: flex;
+        flex: none;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0);
+        transform: all 0.4s ease;
+    }
+    
+    .menu-wrap .menu > div > div{
+        text-align: center;
+        max-width: 90vw;
+        max-height: 100vh;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+    
+    .menu-wrap .menu > div > div > ul > li{
+        list-style: none;
+        color: white;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .menu-wrap .menu > div > div > ul > li > a{
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.4s ease;
+    }
+    .menu-desktop{
+        display: block;
+    }
+    .menu-desktop h3{
+        color: white;
+    }
+}
+
+@media (min-width:901px) and (max-width:1019px) {
+    .header-logo{
+        padding: 4rem 0 2.5rem 5rem;  
+        margin: auto;
+    }
+}
+
+
+@media (min-width:1020px) {
+    .header-logo{
+        padding: 4rem 0 2.5rem 10rem;  
+        margin: auto;
+    }
+
+  
+}
+/* HANDBURGER ENDS HERE  */
+
+
+/* Banner Starts Here  */
+.banner{
+    margin-top: 9rem;
+    background: url(../image/banner-mobile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: var(--secondary-color);
+    overflow: hidden;
+    padding: 3rem;
+    display: flex;
+}
+
+.banner-text{
+    padding-top: 7rem;
+    color: white;
+    text-align: center;
+}
+
+.banner-text p{
+    font-weight: 500;
+}
+
+.banner-text h1{
+    color: white;
+    /* padding-top: 1rem; */
+}
+
+/* .banner-text h2{
+    padding-top: 2rem;
+} */
+
+
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.primary-btn, .secondary-btn{
+    background-color: var(--primary-color);
+    padding: .9rem 2.4rem;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+}
+
+.primary-btn h3, .secondary-btn h3{
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.primary-btn img{
+    width: 1rem;
+    height: .8rem;
+}
+
+.secondary-btn{
+    background-color: transparent;
+}
+
+.secondary-btn img{
+    width: 1rem;
+    height: 1rem;
+}
+
+
+.cloud{
+    position: relative;
+    left: 9rem;
+    bottom: -9rem;
+}
+
+
+.cloud img{
+    width: 80%;
+}
+
+.cloud .asset-btn{
+    position: fixed;
+    top: 80%;
+    left: 80%;
+    background-color: #808080;
+    border-radius: .2rem;
+}
+
+.asset-btn h3{
+    color: #161627;
+    font-weight: 800;
+}
+
+.asset-btn img{
+    width: 1rem;
+    height: 1rem;
+}
+
+.try{
+    display: none;
+}
+
+@media (min-width:665px) and (max-width:899px) {
+    .cloud{
+        left: 12rem;
+        bottom: -12rem;
+    }
+}
+
+
+@media screen and (min-width:900px){
+    .try{
+        display: block;
+        width: 50%;   
+    }
+
+    .cloud img{
+        display: none;
+    }
+
+    .banner{
+        background: url(../image/banner-big.pn);
+        background-color: var(--secondary-color);
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .banner-text{
+        padding: 10rem 0 0 5rem;
+        text-align: left;
+    }
+    .button{
+        justify-content: left;
+    }
+    
+}
+
+@media screen and (min-width:1578px) {
+    .primary-btn h3, .secondary-btn h3{
+        font-size: 2rem;
+    }
+
+    .primary-btn{
+        padding: 1rem 4.8rem;
+    }
+
+    .primary-btn img{
+        width: 2.8rem;
+        height: 2.4rem;
+    }
+    
+    
+    .secondary-btn img{
+        width: 2.7rem;
+        height: 2.7rem;
+    }
+
+
+    .button{
+        gap: 11.2rem;
+    }
+
+    .banner-text{
+        padding-top: 18rem;
+    }
+}
+
+/* Banner Ends Here  */
+
+
+
+/* Mission Starts Here  */
+
+.mission{
+    padding: 8rem 2rem 0 2rem;
+}
+
+.mission-text hr{
+    background-color: #2D2D3D;
+    width: 50%;
+    height: 3px;
+    border: none;
+    margin-bottom: .7rem;
+}
+
+.mission h2{
+    padding-bottom: 2rem;
+}
+
+.mission p{
+    margin-bottom: 1.4rem;
+}
+
+.mission-img img{
+    width: 100%;
+    padding-top: 2rem;
+}
+
+@media screen and (min-width:900px){
+    .mission{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .mission-img{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        gap: 0;
+    }
+    .mission-img img{
+        width: 50%;
+    }
+}
