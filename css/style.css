@@ -199,6 +199,13 @@ body{
     color: #000;
 }
 
+.bubble{
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
 @media (min-width:1024px) and (max-width:1228px) {
     .menu-desktop h3{
         font-size: 1.8rem;
@@ -563,6 +570,8 @@ button{
 
 .mission{
     padding: 8rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .mission-text hr{
@@ -581,24 +590,108 @@ button{
     margin-bottom: 1.4rem;
 }
 
+.mission-img{
+    display: flex;
+    flex-direction: column;
+}
+
+
 .mission-img img{
     width: 100%;
     padding-top: 2rem;
 }
 
+
+
+
+
+
+
 @media screen and (min-width:900px){
     .mission{
-        display: flex;
+        padding: 10rem 5rem 0 5rem;
+        flex-direction: row;
         justify-content: space-between;
-        margin: auto;
+        gap: 5rem;
     }
+
     .mission-img{
         display: flex;
-        justify-content: space-between;
-        margin: auto;
-        gap: 0;
+        flex-direction: row;
+        gap: 3.4rem;
+    }
+
+    .mission-img img{
+        width: 15rem;
+    }
+
+
+    .mission-text{
+        padding-top: 6.9rem;
+    }
+    .mission-second{
+        margin-top: -10rem;
+    }
+
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .mission{
+        gap: 10rem;
+    }
+    .mission-text{
+        padding-top: 5rem;
     }
     .mission-img img{
-        width: 50%;
+        width: 18rem;
     }
 }
+
+@media screen and (min-width:1578px) {
+    .mission{
+        padding: 10rem 10rem 0 10rem;
+        gap: 20rem;
+    }
+
+    .mission-img img{
+        width: 25rem;
+    }
+    .mission-text{
+        padding-top: 10rem;
+    }
+
+    .mission-text hr{
+        height: 5px;
+    }
+}
+
+
+
+/* Part Starts Here  */
+.part{
+    background: url(../image/part-mobile.png);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.part-text h1{
+    color: white;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+/* button{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+} */
