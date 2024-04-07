@@ -1221,3 +1221,50 @@ button{
 
 
 /* inspire Starts here  */
+.inspiration{
+    padding: 2rem;
+}
+
+.inspiration img{
+    width: 70%;
+    margin: auto;
+}
+
+
+.inspiration-text p{
+    margin-bottom: 1.4rem;
+}
+
+.inspiration-text button{
+    margin-bottom: 2rem;
+}
+
+@media screen and (min-width:900px) {
+    .inspiration{
+        display: flex;
+        gap: 8rem;
+    }
+
+    .inspiration img{
+        width: 40%;
+    }
+
+    .inspiration-text{
+        padding-top: 3rem;
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .inspiration{
+        padding: 12rem 5rem 2rem 5rem;
+    }
+
+}
+
+@media screen and (min-width:1578px) {
+    .inspiration{
+        padding: 2rem 10rem 2rem 10rem;
+        gap: 10rem;
+    }
+
+}
