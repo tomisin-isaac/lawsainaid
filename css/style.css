@@ -34,6 +34,7 @@ body{
     font-family: "Open Sans", sans-serif;
     font-family: "Poppins", sans-serif;
     font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -86,6 +87,11 @@ body{
     font-weight: normal;
     color: #444;
 }
+
+.header-logo{
+    padding: 2.5rem 2rem;  
+    margin: auto;
+}
 /* Typography for mobile screen ends here */
 
 
@@ -119,6 +125,11 @@ body{
         font-weight: normal;
         font-style: normal;
         color: #444;
+    }
+
+    .header-logo{
+        padding: 4rem 0 2.5rem 5rem;  
+        margin: auto;
     }
 }
 
@@ -155,6 +166,11 @@ body{
         font-style: normal;
         color: #444;
     }
+
+    .header-logo{
+        padding: 4rem 0 2.5rem 10rem;  
+        margin: auto;
+    }
 }
 
 /* Header  */
@@ -163,15 +179,18 @@ body{
     position: fixed;
     justify-content: space-between;
     top: 0;
+    left: 0;
+    right: 0;
     background: white;
     width: 100%;
     z-index: 999;
-    box-shadow: 0 0 4px lightgray;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+    overflow: hidden; /* Hide any potential overflow */
 }
 
-.header-logo{
-    padding: 2.5rem 5rem;  
-    margin: auto;
+
+.logo{
+    overflow: hidden;
 }
 
 .header-logo img{
@@ -221,8 +240,9 @@ body{
     .menu-wrap{
         position: fixed;
         top: 1rem;
-        right: 5rem;
+        left: 40%;
         z-index: 1;
+        width: 40%;
     }
     
     .menu-wrap .toggler{
@@ -365,23 +385,6 @@ body{
     .menu-desktop h3{
         color: white;
     }
-}
-
-@media (min-width:901px) and (max-width:1019px) {
-    .header-logo{
-        padding: 4rem 0 2.5rem 5rem;  
-        margin: auto;
-    }
-}
-
-
-@media (min-width:1020px) {
-    .header-logo{
-        padding: 4rem 0 2.5rem 10rem;  
-        margin: auto;
-    }
-
-  
 }
 /* HANDBURGER ENDS HERE  */
 
@@ -558,7 +561,7 @@ button{
     }
 
     .banner-text{
-        padding-top: 18rem;
+        padding: 18rem 0 0 10rem;
     }
 }
 
@@ -592,13 +595,15 @@ button{
 
 .mission-img{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
 }
 
 
 .mission-img img{
     width: 100%;
     padding-top: 2rem;
+    
 }
 
 
@@ -663,6 +668,7 @@ button{
     .mission-text hr{
         height: 5px;
     }
+
 }
 
 
@@ -670,6 +676,9 @@ button{
 /* Part Starts Here  */
 .part{
     background: url(../image/part-mobile.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 }
@@ -682,10 +691,15 @@ button{
     color: white;
 }
 
+.part-text h2{
+    margin-top: 4rem;
+    color: white;
+}
+
 .part-form{
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 .part-form input{
@@ -708,6 +722,8 @@ button{
     text-align: center;
 }
 
+
+
 .set-btn{
     height: 4.3rem;
     background-color: var(--secondary-color);
@@ -724,19 +740,28 @@ button{
 
 .part img{
     margin-top: 2.8rem;
+    width: 100%;
 }
 
 @media screen and (min-width:900px) {
     .part{
         background: url(../image/part-background.png);
-        display: flex;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         flex-direction: row;
         padding: 2rem;
         gap: 3rem;
+        height: 40rem;
+
     }
 
     .part img{
+        position: relative;
+        top: 9rem;
         width: 30%;
+        margin: 0;
+        border-radius: 1rem;
     }
     .part-form{
         flex-direction: row;
@@ -747,7 +772,7 @@ button{
         font-size: 1rem;
     }
     .set-btn{
-        padding: 2rem 4.7rem;
+        padding: 0 4.7rem;
     }
 }
 
@@ -755,12 +780,33 @@ button{
     .part{
         padding: 5rem;
         gap: 5rem;
+        height: 75rem;
+    }
+    .part img{
+        position: relative;
+        top: 9rem;
+        width: 25%;
+        margin: 0;
+        border-radius: 1rem;
+    }
+    .part-form input::placeholder {
+        font-size: 1.2rem;
     }
 }
 
 @media screen and (min-width:1578px) {
     .part{
         padding: 5rem 10rem 5rem 10rem;
+        gap: 8rem;
+        height: 80rem;
+    }
+
+    .part img{
+        top: 15rem;
+        width: 40%;
+    }
+    .part-form input::placeholder {
+        font-size: 1.2rem;
     }
 }
 
@@ -778,6 +824,11 @@ button{
     align-items: center;
     align-content: center;
     justify-content: center;
+    margin-top: 5rem;
+}
+
+.about-sign-up{
+    margin: 0;
 }
 
 .form-container{
@@ -856,6 +907,13 @@ button{
     .sign-up-form input{
         width: 35rem;
     }
+
+    .sign-up{
+        margin-top: 18rem;
+    }
+    .about-sign-up{
+        margin: 0;
+    }
     
 }
 
@@ -879,6 +937,9 @@ button{
     .form-holder h2{
         padding: 5rem 0 3rem 0;
     }
+    .about-sign-up{
+        margin: 0;
+    }
 }
 
 @media screen and (min-width:1578px) {
@@ -895,12 +956,15 @@ button{
     }
 
     .news{
-        width: 35%;
+        width: 30%;
         height: 29.5rem;
     }
 
     .form-holder h2{
         padding: 5rem 0 3rem 0;
+    }
+    .about-sign-up{
+        margin: 0;
     }
 }
 
@@ -940,11 +1004,15 @@ button{
     .message-img{
         width: 40%;
     }
+   
 }
 
 @media (min-width:1242px) and (max-width:1578px){
     .message{
         padding: 2rem 5rem 2rem 5rem;
+    }
+    .message-flex{
+        padding-top: 15rem;
     }
 }
 
@@ -953,8 +1021,8 @@ button{
         padding: 2rem 10rem 2rem 10rem;
         gap: 10.9rem;
     }
-    .message-img{
-        width: 30%;
+    .message-flex{
+        padding-top: 15rem;
     }
 }
 
@@ -989,7 +1057,8 @@ button{
 
     .inspire video{
         padding-top: 7rem;
-        width: 50%;
+        width: 40%;
+        height: 40rem;
     }
 }
 
@@ -1009,6 +1078,11 @@ button{
     }
     .inspire video{
         padding-top: 5rem;
+        width: 50%;
+        height: 60rem;
+    }
+    .inspire-text{
+        width: 50%;
     }
 }
 
@@ -1018,66 +1092,126 @@ button{
     width: 100%;
 }
 
-.testimony{
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;  
 }
 
-/* .testimony img{
-    width: 90%;
-    margin: auto;
-} */
+.slide-wrapper {
+    display: flex;
+}
 
-.tetimony-text{
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.testimony {
+    flex-shrink: 0;
+    width: 100%;
+    padding: 2rem;
+    display: none; /* Hide all testimonies by default */
+}
+
+.testimony.active {
+    display: flex; /* Display active testimony */
+}
+
+.tetimony-text {
     padding-top: 2rem;
 }
 
-.tetimony-text p{
+.tetimony-text p {
     margin-bottom: 1.4rem;
 }
 
-@media screen and (min-width:900px) {
-    .testimony{
+.testimony img {
+    width: 90%;
+    margin: auto;
+}
+
+.tes-display{
+    flex-direction: column;
+}
+
+.testi-header{
+    text-align: center;
+}
+
+
+/* Slider navigation styles */
+.slider-nav {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Horizontally center the navigation */
+    bottom: 1px;
+    z-index: 1;
+}
+
+
+
+.slider-nav a {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    margin: 0 5px;
+}
+
+.slider-nav a.active {
+    opacity: 1;
+}
+
+/* Adjustments for different screen sizes */
+@media screen and (min-width: 900px) {
+    .testimony {
         flex-direction: row;
         gap: 7rem;
         margin-top: -9rem;
     }
 
-    .testimony img{
-        width: 50%;
+    .testimony img {
+        width: 40%;
+        margin-top: 6rem;
     }
 
-    .tetimony-text{
-        padding-top: 18rem;
-    }
-    .tetimony-text h2{
-        padding-bottom: 2rem;
-    }
-}
-
-@media (min-width:1242px) and (max-width:1578px){
-    .testimony{
-        padding: 2rem 5rem 2rem 5rem;
-    }
-
-    .tetimony-text{
+    .tetimony-text {
         padding-top: 25rem;
     }
-
-
+    .testi-header{
+        display: none;
+    }
 }
 
-@media screen and (min-width:1578px) {
-    .testimony{
-        padding: 2rem 10rem 2rem 10rem;
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .testimony {
+        padding: 2rem 5rem;
+    }
+}
+
+@media screen and (min-width: 1578px) {
+    .testimony {
+        padding: 2rem 10rem;
         gap: 10rem;
         margin-top: -18rem;
     }
-    .tetimony-text{
-        padding-top: 30rem;
+    .tetimony-text {
+        padding-top: 50rem;
+    }
+    .testimony img {
+        width: 40%;
+        margin-top: 15rem;
     }
 }
+
+
+
+
+
 
 
 
@@ -1085,61 +1219,110 @@ button{
 /* footer Starts here  */
 .footer{
     padding: 2rem;
+    background-color: #2D2D3D;
+    color: white;
     display: flex;
     flex-direction: column;
 }
 
-.logo-row img{
-    width: 15%;
+.footer a{
+    color: white;
+}
+.footer h2{
+    color: white;
 }
 
-.logo-row p{
-    padding-top: 1.4rem;
-    /* width: 70ch; */
+
+
+.footer-logo{
+    display: flex;
+    gap: 5rem;
 }
 
-.page-row{
-    padding-top: 3rem;
+.footer-logo img{
+    width: 7rem;
+    height: 3rem;
 }
 
-.page-row h2{
+
+
+
+.touch{
+    margin-top: 4rem;
+}
+
+.touch h2{
+    padding-bottom: 1rem;
+}
+.touch a h3{
+    padding-bottom: 1rem;
+}
+.foot-abt h2{
+    padding-top: 4rem;
+    margin-bottom: 1rem;
+}
+.foot-abt a h3{
     padding-bottom: 1rem;
 }
 
-.page-row a h3{
+.mail{
+    margin-bottom: 4rem;
+}
+
+.mail h2{
     padding-bottom: 1rem;
 }
 
-.contact-row{
-    padding-top: 2rem;
+.mail img{
+    width: 5%;
 }
-.contact-row img{
-    width: 15%;
+.contact-footer{
+    margin-top: 4rem;
 }
 
-@media screen and (min-width:900px) {
+@media screen and (min-width: 900px){
     .footer{
+        display: flex;
         flex-direction: row;
+        justify-content: space-between;
         gap: 5rem;
     }
 
-    .logo-row p{
-        width: 70ch;
+    .footer p{
+        width: 15pc;
+    }
+
+    .footer-logo{
+        display: block;
+    }
+
+    .mail img{
+        width: 8%;
+    }
+ 
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .footer {
+        padding: 2rem 5rem;
+        gap: 8rem;
+    }
+
+
+}
+
+@media screen and (min-width: 1578px) {
+    .footer {
+        padding: 2rem 10rem;
+        gap: 10rem;
+    }
+
+    .footer p{
+        width: 25pc;
     }
 }
 
-@media (min-width:1242px) and (max-width:1578px){
-    .footer{
-        padding: 2rem 5rem 2rem 5rem;
-    }
-}
 
-@media screen and (min-width:1578px) {
-    .footer{
-        padding: 5rem 10rem 2rem 10rem;
-        gap: 20rem;
-    }
-}
 
 
 
@@ -1150,8 +1333,7 @@ button{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 85vh;
-    padding: 2rem 0 0 2rem;
+    padding: 2rem 0 6rem 2rem;
     margin-top: 9rem;
 }
 
@@ -1180,8 +1362,8 @@ button{
     }
     .about img{
         display: block;
-        width: 50%;
-        margin-top: -5rem;
+        width: 30%;
+        margin-top: 0;
     }
 
     .about p{
@@ -1201,8 +1383,8 @@ button{
         padding-top: 10rem;
     }
     .about img{
-        width: 100%;
         margin-top: 0;
+        width: 30%;
     }
 }
 
@@ -1216,6 +1398,96 @@ button{
     }
     .about img{
         margin-top: 0;
+        width: 30%;
+    }
+}
+
+
+
+
+/* Who we are Starts  */
+.who{
+    padding: 2rem;
+}
+.who-holder{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4.7rem;
+}
+
+.value{
+    width: 100%;
+    margin: auto;
+    background-color: #F8F8F9;
+    padding: 2rem;
+    border-radius: .5rem;
+    margin-bottom: 4rem;
+}
+
+.value img{
+    width: 100%;
+}
+
+.value hr{
+    background-color: var(--primary-color);
+    width: 5rem;
+    height: .5rem;
+    border: none;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+}
+
+.value h2{
+    margin-bottom: 1rem;
+}
+
+
+
+
+@media screen and (min-width:900px){
+    .values-holder{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .who-holder{
+        background-color: #F8F8F9;
+        padding: 5rem;
+        border-radius: 1rem;
+    }
+    .who-holder p{
+        padding-top: 1rem;
+        width: 33pc;
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .who{
+        padding: 20rem 5rem 5rem 5rem;
+    }
+    .values-holder{
+        gap: 4rem;
+    }
+    .value{
+        padding: 4rem;
+    }
+}
+
+@media screen and (min-width:1578px) {
+    .who{
+        padding: 2rem 10rem 0 10rem;
+    }
+    .values-holder{
+        gap: 6rem;
+    }
+    .value{
+        padding: 6rem;
+    }
+    .who-holder p{
+        padding-top: 1rem;
+        width: 43pc;
     }
 }
 
@@ -1272,7 +1544,7 @@ button{
 
 /* Goals Starts here  */
 .goal{
-    padding: 8rem 2rem 0 2rem;
+    padding: 8rem 2rem 18rem 2rem;
     display: flex;
     flex-direction: column;
     background-color: #FFF0C7;
@@ -1296,6 +1568,7 @@ button{
 
 .collapsible__heading{
     margin-top: 0;
+    font-weight: 800;
 }
 
 .collapsible__header img{
@@ -1308,12 +1581,13 @@ button{
     transition: transform .3s;
 }
 
-.collapsible__content{
+.collapsible__content {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: all 0.3s;
 }
+
 
 .collapsible__content hr{
     margin-top: 2rem;
@@ -1324,10 +1598,10 @@ button{
     transform: rotate(0);
 }
 
-.collapsible__expanded .collapsible__content{
+/* .collapsible__expanded .collapsible__content{
     max-height: 100vh;
     opacity: 1;
-}
+} */
 
 @media screen and (min-width:900px) {
     .goal{
@@ -1338,14 +1612,14 @@ button{
 
 @media (min-width:1242px) and (max-width:1578px){
     .goal{
-        padding: 10rem 5rem 0 5rem;
+        padding: 10rem 5rem 20rem 5rem;
     }
 
 }
 
 @media screen and (min-width:1578px) {
     .goal{
-        padding: 10rem 10rem 0 10rem;
+        padding: 10rem 10rem 20rem 10rem;
         gap: 10rem;
     }
 
@@ -1354,11 +1628,22 @@ button{
 
 
 /* success Starts here */
+.success-holder{
+    position: absolute;
+    right: 0;
+    left: 0;
+}
 .success{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 5.5rem;
+    width: 90%;
+    margin: auto;
+    border-radius: .5rem;
+    margin-top: -18rem;
+    background-color: white;
+    z-index: 9999;
 }
 
 .number{
@@ -1374,17 +1659,35 @@ button{
     .success{
         flex-direction: row;
         justify-content: space-around;
+        margin-top: -8rem;
+        width: 90%;
+        height: 20rem;
     }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .success{
+        margin-top: -13rem;
+    }
+
+}
+
+@media screen and (min-width:1578px) {
+    .success{
+        margin-top: -13rem;
+    }
+
 }
 
 
 
 
 
-
+/* volunteer Starts here */
 .volunteer{
     padding: 2rem;
     background-color: #857E7B;
+    padding-top: 25rem;
 }
 
 .volunteer-text{
@@ -1437,4 +1740,760 @@ button{
         width: 90%;
     }
 
+}
+
+
+
+
+
+
+
+
+/* Work Page starts here  */
+.work {
+    position: relative;
+    margin-top: 9rem;
+}
+
+.work-text-img{
+    width: 100%;
+}
+.work-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 2rem;
+    width: 100%;
+    color: white;
+}
+
+.work h1 {
+    color: #fff;
+}
+
+.number-holder {
+    display: flex;
+    gap: 2.4rem;
+}
+
+.number-work h1 {
+    color: #DEFFF2;
+}
+
+.number-work {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.work-img {
+    display: none;
+}
+
+@media screen and (min-width:900px) {
+    .work {
+        display: flex;
+    }
+
+    .work-img {
+        display: block;
+        width: 50%;
+    }
+    .work-text-img{
+        width: 50%;
+    }
+    .text-paragraph{
+        width: 25pc;
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .work-text{
+        padding: 10rem 5rem 0 5rem;
+    }
+    .text-paragraph{
+        width: 30pc;
+    }
+    .text-paragraph-h1{
+        width: 35pc;
+    }
+
+}
+
+@media screen and (min-width:1578px) {
+    .work-text{
+        padding: 10rem 10rem 0 10rem;
+    }
+    .text-paragraph{
+        width: 40pc;
+    }
+    .text-paragraph-h1{
+        width: 35pc;
+    }
+}
+
+
+
+/* Our Partners  */
+.partners {
+    padding: 2rem;
+    text-align: center;
+}
+
+.partners-img-container {
+    overflow: hidden;
+}
+
+.partners-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    animation: scroll 20s linear infinite;
+}
+
+.partners-img img {
+    width: 15%;
+    height: 15%;
+    margin-right: 70px; /* Add space between images */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+@media screen and (min-width:900px){
+    .partners-img img {
+        width: 10%;
+        height: 15%;
+        margin-right: 70px; /* Add space between images */
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .partners{
+        padding: 4rem 5rem 0 5rem;
+    }
+
+}
+
+@media screen and (min-width:1578px) {
+    .partners{
+        padding: 4rem 10rem 0 10rem;
+    }
+    .partners-img img {
+        width: 5%;
+        height: 10%;
+        margin-right: 70px; /* Add space between images */
+    }
+}
+
+
+
+
+
+/* program  */
+.programs{
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.programs hr{
+    width: 30%;
+    height: .5rem;
+    background-color: #2D2D3D;
+    border: none;
+    margin-bottom: .8rem;
+}
+
+.program-card-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.program-card img{
+    width: 100%;
+}
+
+.program-card p{
+    padding-top: 2rem;
+}
+
+@media screen and (min-width:900px){
+    .program-card-holder{
+        flex-direction: row;
+    }
+
+    .programs hr{
+        width: 15%;
+    }
+
+    .program-lead-text{
+        width: 45pc;
+        padding-top: 2rem;
+    }
+
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .programs{
+        padding: 4rem 5rem 0 5rem;
+    }
+    .program-lead-text{
+        width: 55pc;
+    }
+
+}
+
+@media screen and (min-width:1578px) {
+    .programs{
+        padding: 4rem 10rem 0 10rem;
+        margin-top: 5rem;
+    }
+    .programs hr{
+        width: 15%;
+    }
+    .program-card img{
+        width: 51.1rem;
+        height: 46.2rem;
+    }
+    .program-card p{
+        width: 30pc;
+    }
+    .program-lead-text{
+        width: 68pc;
+    }
+}
+
+
+
+/* Get Involved Page  */
+.connect{
+    margin-top: 9rem;
+    padding: 2rem 0 0 2rem;
+    background-color: var(--secondary-color);
+    color: white;
+    height: 50rem;
+}
+
+.connect-text{
+    padding: 6rem 2rem 2rem 0;
+}
+
+.connect-text h1{
+    color: white;
+}
+.connect-img{
+    width: 100%;
+}
+
+@media screen and (min-width:900px){
+    .connect{
+        display: flex;
+        height: 30rem;
+        gap: 3rem;
+    }
+
+    .connect-img{
+        width: 60%;
+        height: 40rem;
+    }
+
+
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .connect{
+        padding: 4rem 0 0 5rem;
+        height: 50rem;
+    }
+    .connect-img{
+        width: 60%;
+        height: 60rem;
+    }
+
+}
+
+@media screen and (min-width:1578px) {
+    .connect{
+        padding: 4rem 0 0 10rem;
+        height: 65rem;
+        gap: 10rem;
+    }
+
+    .connect-img{
+        width: 60%;
+        height: 80rem;
+    }
+
+    .connect-text{
+        padding-top: 15rem;
+    }
+
+}
+
+
+/* involved  */
+.involved {
+    margin-top: 25rem;
+    padding: 2rem;
+}
+
+.card {
+    position: relative;
+    width: calc(100% - 2rem); /* Adjusted width to accommodate space */
+    margin-right: 2rem; 
+}
+
+.card img {
+    width: 25.9rem;
+    height: 30.7rem;
+    display: block;
+}
+
+.involved__card__content {
+    position: absolute;
+    bottom: 1rem;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    color: white;
+}
+
+.arrow {
+    position: absolute;
+    top: calc(50% - 3.3rem); /* Adjusted position */
+    width: 4rem; /* Reduced size */
+    height: 4rem; /* Reduced size */
+    z-index: 999; /* Ensure arrows are above other content */
+}
+
+.left__arrow {
+    left: 2rem;
+    rotate: 180deg;
+    cursor: pointer;
+}
+.left__arrow img{
+    width: 3rem;
+}
+.right__arrow {
+    right: 2rem;
+    cursor: pointer;
+}
+.right__arrow img{
+    width: 3rem;
+}
+
+.involved__card__scroll {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin: 0 0; /* Adjusted margin */
+    padding: 0 2rem; /* Adjusted padding */
+}
+
+.involved__card__scroll::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+@media (min-width:568px) and (max-width:899px) {
+    .involved{
+        margin-top: 50rem;
+    }
+}
+
+@media screen and (min-width:900px){
+    .card img {
+        width: 30.9rem;
+        height: 40rem;
+        display: block;
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .involved{
+        padding: 4rem 0 0 5rem;
+    }
+
+    .card img {
+        width: 35.9rem;
+        height: 45rem;
+        display: block;
+    }
+}
+
+@media screen and (min-width:1578px) {
+    .involved{
+        padding: 4rem 0 0 10rem;
+    }
+    .card img {
+        width: 50.9rem;
+        height: 63.7rem;
+        display: block;
+    }
+}
+
+
+/* promt  */
+.promt{
+    background: url(..//image/involve.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 8rem 0 4rem 0;
+}
+
+
+
+.article{
+    background-color: var(--secondary-color);
+}
+
+.article h2{
+    color: white;
+    padding-bottom: 1rem;
+}
+
+.donate-promt{
+    background-color: var(--primary-color);
+}
+
+.donate-promt h2{
+    color: black;
+    padding-bottom: 1rem;
+}
+
+.donate-promt p{
+    color: black;
+}
+
+.promt-holder{
+    max-width: 90%;
+    margin: auto;
+    border-radius: 1rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    padding: 4rem;
+    color: white;
+}
+
+
+.anchor-promt{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: -5rem;
+}
+
+.promt-btn{
+    padding: 1rem 4rem;
+}
+
+.promt-btn2{
+    padding: 1rem 4rem;
+    background-color: var(--secondary-color);
+}
+
+@media screen and (min-width:900px){
+    .promt{
+        display: flex;
+        gap: 4rem;
+        padding: 8rem 2rem 4rem 2rem;
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .promt{
+        padding: 8rem 5rem 4rem 5rem;
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (min-width:1578px) {
+    .promt{
+        padding: 8rem 10rem 4rem 10rem;
+        margin-top: 5rem;
+    }
+}
+
+
+
+/* question  */
+.question{
+    padding: 2rem;
+}
+.question img{
+    width: 100%;
+}
+
+.question-flex{
+    display: flex;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+
+.question-message-flex{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.question-message-flex textarea{
+    width: 33rem;
+}
+
+.question-flex input{
+    height: 3rem;
+    width: 15rem;
+}
+
+@media screen and (min-width:900px) {
+    .question{
+        display: flex;
+        gap: 6rem;
+    }
+    .question img{
+        width: 40%;
+    }
+    .question-form{
+        margin-top: 9rem;
+    }
+    .question-flex input{
+        height: 3rem;
+        width: 22rem;
+    }
+    .question-message-flex textarea{
+        width: 100%;
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .question{
+        padding: 2rem 5rem 2rem 5rem;
+        gap: 10rem;
+    }
+    .question img{
+        width: 30%;
+    }
+
+    .question-flex input{
+        height: 4rem;
+        width: 30rem;
+    }
+}
+
+@media screen and (min-width:1578px) {
+    .question{
+        padding: 2rem 10rem 2rem 10rem;
+        gap: 30rem;
+    }
+
+    .question img{
+        width: 35%;
+    }
+
+    .question-flex input{
+        height: 4rem;
+        width: 30rem;
+    }
+    
+}
+
+
+.contact{
+    padding: 2rem;
+}
+
+.contact-info h2{
+    padding: 2rem 0 1rem 0;
+}
+.map{
+    margin-top: 3rem;
+}
+
+.map iframe{
+    width: 100%;
+}
+
+@media screen and (min-width:900px){
+    .contact{
+        display: flex;
+        gap: 5rem;
+    }
+
+    .map iframe{
+        width: 50rem;
+        height: 40rem;
+    }
+
+    .contact-text{
+        margin-top: 10rem;
+    }
+
+    .contact-info{
+        display: flex;
+        gap: 5rem;
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .contact{
+        padding: 2rem 5rem 2rem 5rem;
+    }
+
+    .contact-text{
+        margin-top: 8rem;
+    }
+
+    .contact-info{
+        gap: 8rem;
+    }
+}
+
+@media screen and (min-width:1578px) {
+    .contact{
+        padding: 2rem 10rem 2rem 10rem;
+        gap: 30rem;
+    }
+
+    .map iframe{
+        width: 70rem;
+        height: 60rem;
+    }
+}
+
+
+
+
+
+
+/* Volunteer-page  */
+.Volunteer-page{
+    padding: 2rem;
+    margin-top: 7rem;
+}
+
+.Volunteer-img-page{
+    width: 100%;
+}
+@media screen and (min-width:900px) {
+    .Volunteer-page{
+        display: flex;
+        flex-direction: row-reverse;
+        margin-top: 9rem;
+        gap: 10rem;
+    }
+
+    .Volunteer-img-page{
+        width: 40%;
+    }
+
+    .Volunteer-text-page{
+        margin-top: 9rem;
+    }
+}
+
+@media (min-width:1242px) and (max-width:1578px){
+    .Volunteer-page{
+        padding: 2rem 5rem 2rem 5rem;
+        gap: 15rem;
+        margin-top: 12rem;
+    }
+}
+
+@media screen and (min-width:1578px) {
+    .Volunteer-page{
+        padding: 2rem 10rem 2rem 10rem;
+        gap: 40rem;
+    }
+    .Volunteer-img-page{
+        width: 35%;
+    }
+}
+
+
+/* Volunteer-page-Stories  */
+.stories {
+    padding: 2rem;
+}
+
+.stories hr {
+    width: 40%;
+    height: .5rem;
+    background-color: var(--secondary-color);
+    border: none;
+    margin-bottom: 1.6rem;
+}
+
+.story-img {
+    display: flex;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+
+.v-story {
+    width: 85%;
+    
+}
+
+.story-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.story-icon img {
+    width: 50%; /* Set initial width */
+}
+
+.story-text {
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+    .story-flex {
+        display: flex;
+        gap: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .story-icon img {
+        width: 50%; /* Adjust width for larger screens */
+    }
+
+    .story-text-holdder p{
+        width: 60pc;
+    }
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .stories {
+        padding: 2rem 5rem 2rem 5rem;
+    }
+}
+
+@media screen and (min-width: 1578px) {
+    .stories {
+        padding: 2rem 10rem 2rem 10rem;
+    }
+
+    .story-text p{
+        width: 45pc;
+    }
 }

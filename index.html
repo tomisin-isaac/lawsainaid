@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
         <title>LAWSANAID</title>
@@ -31,9 +32,9 @@
                         <ul class="menu-desktop">
                             <li><a href="/index.html"><h3>Home</h3><div class="bubble"></div></a></li>
                             <li><a href="/about.html"><h3>About Us</h3><div class="bubble"></div></a></li>
-                            <li><a href="/events.html"><h3>Our Work</h3><div class="bubble"></div></a></li>
+                            <li><a href="/work.html"><h3>Our Work</h3><div class="bubble"></div></a></li>
                             <li><a href="#support"><h3>Our Team</h3><div class="bubble"></div> </a></li>
-                            <li><a href="/contact.html"><h3>Get Involved</h3><div class="bubble"></div></a></li>
+                            <li><a href="/get-involved.html"><h3>Get Involved</h3><div class="bubble"></div></a></li>
                             <li><a href="/contact.html"><h3>Donate</h3><div class="bubble"></div></a></li>                        
                         </ul>
                     </div>
@@ -46,18 +47,18 @@
 
 
     <!-- Banner Starts Here  -->
-    <div class="banner">
-        <div class="banner-text">
+    <div class="banner" data-aos="fade-up" data-aos-delay="50" data-aos-duration="900">
+        <div class="banner-text" data-aos="fade-down" data-aos-delay="100" data-aos-duration="4000">
             <h3>LAWSANAID Empowering Through Education</h3>
             <h1>Building Bridges, Breaking Barriers for a Future of Legal Inclusivity</h1>
             <p>Welcome to LAWSANAID, where education knows no boundaries. We are a dedicated 
-                team of volunteers, driven by the belief that everyone, regardless of 
-                ability, deserves access to quality education. Our focus is on law students 
+                team of volunteers, driven by the belief that everyone, regardless of their
+                disability, deserves access to quality education. Our focus is on law students 
                 and aspiring legal minds with disabilities, providing them with a platform 
                 for growth and development.
             </p>
             <div class="button">
-                <a href="">
+                <a href="/about.html">
                     <button class="primary-btn">
                         <h3>Learn More</h3>
                         <img src="/Icons/arrow.png" alt="right arrow"> 
@@ -75,7 +76,7 @@
                 <!-- <a href=""><button class="asset-btn primary-btn"><img src="/Icons/donate.png" alt=""><h3>Donate </h3></button></a>  -->
             </div>
         </div>
-        <img class="try" src="/image/banner-big.png" alt="">
+        <img class="try" src="/image/banner-big.png" alt="" data-aos="fade-left" data-aos-delay="100" data-aos-duration="4000">
     </div>
     <!-- Banner Ends Here  -->
 
@@ -83,7 +84,7 @@
 
     <!-- Mission Stars Here  -->
     <div class="mission">
-        <div class="mission-text">
+        <div class="mission-text" data-aos="zoom-in">
             <hr>
             <h2>Our mission is to support <span>persons with disabilities</span> around the world</h2>
             <p>
@@ -104,7 +105,7 @@
                 global community.
             </p>
 
-            <a href="">
+            <a href="/about.html">
                 <button class="primary-btn">
                     <h3>Learn More</h3>
                     <img src="/Icons/arrow.png" alt="right arrow"> 
@@ -113,30 +114,34 @@
         </div>
 
         <div class="mission-img">
-            <div class="mission-first">
-                <img src="/image/mission.png" alt="Hearing Impairment">
-                <img src="/image/mission.png" alt="Visual Impairment">
+            <div class="mission-first"data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <img src="image/hearing.png" alt="Hearing Impairment">
+                <img src="/image/visual.png" alt="Visual Impairment">
             </div>
 
-            <div class="mission-second">
-                <img src="/image/mission.png" alt="Hearing Impairment">
-                <img src="/image/mission.png" alt="Mobility Impairment">
+            <div class="mission-second" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                <img src="/image/intellectual.png" alt="interllectual Impairment">
+                <img src="/image/mobility.png" alt="Mobility Impairment">
             </div>
         </div>
     </div>
 
     <!-- Part Starts Here  -->
-    <div class="part">
+    <div class="part"data-aos="zoom-in">
         <div class="part-text">
-            <h1>Be A Part Of The Change</h1>
+            <h1>Be A Part Of <br> The Change</h1>
             <p>
-                Step into a realm of possibilities as LAWSANAID redefines the narrative around 
-                education. Our mission is clear: to create a supportive ecosystem for 
-                individuals with disabilities pursuing legal studies. We go beyond textbooks, 
-                offering a platform that fosters mentorship, skill-building, and networking 
-                opportunities, ensuring that every aspiring legal professional has the tools 
-                needed for success.
+                Join us in our mission to promote inclusivity and empower 
+                individuals with disabilities through legal education. Your 
+                contributions directly impact breaking down barriers and 
+                fostering empowerment. Gain valuable experience, enhance 
+                skills, and broaden your understanding of diversity. 
+                Connect with like-minded peers, build lasting friendships, 
+                and open doors to new opportunities in the legal profession. 
+                Join a movement towards a future where education is truly 
+                inclusive and accessible to all.
             </p>
+            <h2>Volunteer</h2>
             <form class="part-form" action="">
                 <input type="text" placeholder="Input Full Name">
                 <input type="text" placeholder="Input Email address">
@@ -144,12 +149,13 @@
                 <button class="set-btn"><h3>submit</h3></button>
             </form>
         </div>
-        <img src="/image/part.png" alt="">
+        <img src="/image/part.png" alt=""  data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
     </div>
+    
 
 
     <!-- Sign-up Starts here  -->
-    <div class="sign-up">
+    <div class="sign-up" data-aos="zoom-out">
         <div class="form-container">
            <div class="form-holder">
                 <h2>Sign Up For Our Newsletter</h2>
@@ -165,34 +171,44 @@
 
     <!-- Message Starts here  -->
     <div class="message">
-        <img class="message-img" src="/image/founder.png" alt="">
-        <div class="message-holder">
+        <img class="message-img" data-aos="fade-right" src="/image/founder-1.png" alt="">
+        <div class="message-holder" data-aos="fade-right">
             <div class="message-flex">
                 <div><hr></div>
                 <div class="message-text">
                     <h2>A Message From Our <br> <span>Founder</span></h2>
                     <p>
-                        Step into a realm of possibilities as LAWSANAID redefines the narrative around 
-                        education. Our mission is clear: to create a supportive ecosystem for individuals 
-                        with disabilities pursuing legal studies. We go beyond textbooks, offering a platform 
-                        that fosters mentorship, skill-building, and networking opportunities, ensuring that 
-                        every aspiring legal professional has the tools needed for success.
+                        Starting Lawsanaid was a significant achievement in 2022. 
+                        It began with a desire to assist law students with 
+                        disabilities after encountering a brilliant visually 
+                        impaired student during my undergraduate years. 
+                        This student's determination inspired me to create a more 
+                        inclusive environment when I became the Southeast Regional 
+                        Director for law students in Nigeria. Working closely with 
+                        him, I learned about the challenges faced by students with 
+                        disabilities and was motivated to help.
                     </p>
                     <p>
-                        In the spirit of Sustainable Development Goal 4 – Quality Education, we are unwavering 
-                        in our commitment to an inclusive and equitable learning experience. LAWSANAID is 
-                        dedicated to dismantling barriers, challenging stereotypes, and ensuring that the legal 
-                        profession reflects the diversity of talent present in our global community.
+                        This young man's story became the inspiration for Lawsanaid, 
+                        and I'm proud of the progress we've made in supporting law 
+                        students with disabilities in Africa. Our success wouldn't be 
+                        possible without the incredible Lawsanaid team and the support of 
+                        our sponsors, partners, volunteers, ambassadors, and benefactors.
                     </p>
                     <p>
-                        In the spirit of Sustainable Development Goal 4 – Quality Education, we are unwavering 
-                        in our commitment to an inclusive and equitable learning experience. LAWSANAID is 
-                        dedicated to dismantling barriers, challenging stereotypes, and ensuring that the 
-                        legal profession reflects the diversity of talent present in our global community.
+                        To our community members, remember that disability is not an 
+                        inability, and your dreams are valid. Thank you for being 
+                        part of this journey.
+                    </p>
+                    <p>
+                        To those visiting our website, welcome! We hope you're 
+                        inspired to join us as a volunteer, benefactor, partner, 
+                        or in any capacity. Together, we can achieve the Lawsanaid 
+                        vision and contribute to the UN SDGs!
                     </p>
                     <a href="">
                         <button class="primary-btn">
-                            <h3>Learn More</h3>
+                            <h3>Meet Team</h3>
                             <img src="/Icons/arrow.png" alt="right arrow"> 
                         </button>
                     </a>
@@ -202,31 +218,28 @@
     </div>
 
     <!-- Inspire Starts here  -->
-    <div class="inspire">
-        <video controls autoplay loop src="/videos/2-_Who_This_Course_Is_For.mp4"></video>
+    <div class="inspire" data-aos="fade-up" data-aos-duration="3000">
+        <video controls loop src="/videos/WhatsApp Video 2024-04-12 at 07.40.48 (1).mp4"></video>
         <div class="inspire-text">
             <h2>Inspiring Stories Of Those We <br> <span>Have Helped</span></h2>
             <p>
-                Write about the success stories of people they have helped  possibilities as 
-                LAWSANAID redefines the narrative around education. Our mission is clear: to 
-                create a supportive ecosystem for individuals with disabilities pursuing legal 
-                studies. We go beyond textbooks, offering a platform that fosters mentorship, 
-                skill-building, and networking opportunities, ensuring that every aspiring legal 
-                professional has the tools needed for success.
+                In our endeavors, we've encountered individuals facing various 
+                challenges, from overcoming physical barriers to navigating 
+                academic uncertainties. Through tailored support and guidance 
+                provided by LAWSANAID, these individuals have found renewed 
+                confidence and determination to pursue their aspirations.
             </p>
             <p>
-                In the spirit of Sustainable Development Goal 4 – Quality Education, we are 
-                unwavering in our commitment to an inclusive and equitable learning experience. 
-                LAWSANAID is dedicated to dismantling barriers, challenging stereotypes, and 
-                ensuring that the legal profession reflects the diversity of talent present in 
-                our global community.
+                Amidst adversity, stories of resilience and determination have 
+                emerged. Individuals have embraced challenges as opportunities 
+                for growth, showcasing the transformative power of perseverance 
+                and self-belief.
             </p>
             <p>
-                In the spirit of Sustainable Development Goal 4 – Quality Education, we are 
-                unwavering in our commitment to an inclusive and equitable learning experience. 
-                LAWSANAID is dedicated to dismantling barriers, challenging stereotypes, and ensuring 
-                that the legal profession reflects the diversity of talent present in our global 
-                community.
+                These narratives exemplify the ethos of LAWSANAID—fostering 
+                empowerment, breaking down barriers, and championing inclusivity. 
+                As we continue our journey, we remain steadfast in our commitment 
+                to supporting individuals in their pursuit of a brighter future.
             </p>
         </div>
     </div>
@@ -235,33 +248,124 @@
     <div class="testi-background">
         <img src="/image/testi.png" alt="">
     </div>
-    <div class="testimony">
-        <img src="/image/testimony.png" alt="">
-        <div class="tetimony-text">
-            <h2>Testimonies</h2>
-            <p>
-                Step into a realm of possibilities as LAWSANAID redefines the 
-                narrative around education. Our mission is clear: to create a 
-                supportive ecosystem for individuals with disabilities pursuing 
-                legal studies. We go beyond textbooks, offering a platform that 
-                fosters mentorship, skill-building, and networking opportunities, 
-                ensuring that every aspiring legal professional has the tools needed 
-                for success.
-            </p>
-            <p>
-
-                In the spirit of Sustainable Development Goal 4 – Quality 
-                Education, we are unwavering in our commitment to an inclusive 
-                and equitable learning experience. LAWSANAID is dedicated to 
-                dismantling barriers, challenging 
-            </p>
+    <h2 class="testi-header">Testimonies</h2>
+    <div class="slider-container">
+        <div class="slide-wrapper">
+            <div class="slider">
+                <div class="testimony active tes-display" id="slide-7">
+                    <img src="image/Group 31479.png" alt="">
+                    <div class="tetimony-text">
+                        <h2>Ezihe Precious</h2>
+                        <p>
+                            Dear Lawsanaid community, I want to take a moment to express 
+                            my deepest gratitude to you for organizing the easy competition. 
+                            Your dedication and hard work in creating this platform for we law 
+                            students to showcase creativity in our writing skills are truly 
+                            commendable
+                        </p>
+                        <p>
+                            The opportunity provided by this competition has not only bolstered my 
+                            confidence but has also served as a valuable learning experience. It has 
+                            allowed us to explore diverse perspectives, voice our thoughts, and 
+                            develop our writing skills.The encouragement and support received from the 
+                            organizers have been instrumental in fostering a community of literary 
+                            enthusiasts.
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="testimony tes-display" id="slide-8">
+                    <img src="image/Group 31480.png" alt="">
+                    <div class="tetimony-text">
+                        <h2>Abel Chukwuemeka</h2> <br>
+                        <p>
+                            This is my first time of writing an essay of any 
+                            sort and I am happy it started with the platform 
+                            provided by this great community
+                        </p>
+                        <p>
+                            Coming third in my first attempt has inspired me to explore 
+                            the opportunities provided by other competition. Thanks you 
+                            again Lawsanaid for this opportunity.
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="testimony tes-display" id="slide-9">
+                    <img src="image/Group 31478.png" alt="">
+                    <div class="tetimony-text">
+                        <h2>Edibo Gabriel</h2>
+                        <p> 
+                            I am writing to express my sincere gratitude for 
+                            your generous support and recognition. I am honored 
+                            to be the first runner-up of the essay contest you 
+                            organized <br>
+                            Your initiative has inspired me to pursue my passion for 
+                            legal research and writing. Through this contest, I have 
+                            learned a lot about the role of assistive technology in 
+                            enhancing the quality of life of persons with disabilities. 
+                            I have also improved my skills in critical thinking, analysis, 
+                            and communication
+                        </p>
+                        <p>You have given me a valuable opportunity to showcase 
+                            my work and receive constructive feedback. You have 
+                            motivated me to continue my academic journey and 
+                            explore new horizons.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-nav">
+            <a href="#slide-7" class="active"></a>
+            <a href="#slide-8"></a>
+            <a href="#slide-9"></a>
         </div>
     </div>
 
+    <!-- promt  -->
+    <div class="promt index-promt" data-aos="zoom-out-down">
+        <div class="article promt-holder">
+            <h2>Discover Community Articles</h2>
+            <p>
+                Welcome to our vibrant community! At LAWSANAID, we're excited 
+                to share a diverse range of articles that delve into topics 
+                relevant to our mission of empowerment, inclusion, and social 
+                justice. Dive into our collection of community articles to 
+                discover thought-provoking insights, inspiring stories, and 
+                valuable resources:
+            </p>
+            <a href="https://medium.com/@lawsanaid/can-law-be-used-as-an-effective-instrument-for-change-in-nigeria-today-df0d68a4e5f5" class="anchor-promt">
+                <button class="primary-btn promt-btn">
+                    <h3>Read Articles</h3>
+                    <img src="/Icons/arrow.png" alt="right arrow"> 
+                </button>
+            </a>
+        </div>
+
+        <div class="donate-promt promt-holder">
+            <h2>Donate to Support Our Mission</h2>
+            <p>
+                Your generosity has the power to make a real difference in the 
+                lives of individuals with disabilities pursuing legal education. 
+                By donating to LAWSANAID, you're directly contributing to our 
+                efforts to promote inclusivity, provide support, and empower 
+                aspiring legal professionals. Here's how your donation can help:
+            </p>
+            <a href="" class="anchor-promt">
+                <button class="primary-btn promt-btn2">
+                    <h3>Make A Donation</h3>
+                    <img src="/Icons/arrow.png" alt="right arrow"> 
+                </button>
+            </a>
+        </div>
+    </div>
+    
+
     <!-- footer Starts here  -->
     <div class="footer">
-        <div class="logo-row">
-            <img src="/image/footer-Logo 3.png" alt="">
+        <div class="footer-logo">
+            <img src="image/footer-logo3.png" alt="">
             <p>
                 Our work is ongoing, and we invite individuals, organizations, 
                 and allies who share our vision to get involved. Whether through 
@@ -270,19 +374,43 @@
                 truly inclusive and empowering.
             </p>
         </div>
-        <div class="page-row">
-            <h2>Pages</h2>
-            <a href=""><h3>About Us</h3></a>
-            <a href=""><h3>Our Work</h3></a>
-            <a href=""><h3>Our Team</h3></a>
-            <a href=""><h3>Get Involved</h3></a>
-            <a href=""><h3>Donate</h3></a>
+        
+        <div class="touch">
+            <h2>Stay  in touch</h2>
+            <a href="/index.html"><h3>News Feed</h3></a>
+            <a href="/index.html"><h3>linkedin</h3></a>
+            <a href="/index.html"><h3>Instagram</h3></a>
+            <a href="/index.html"><h3>Twitter</h3></a>
         </div>
-        <div class="contact-row">
-            <img src="/image/footer-icon.png" alt="">
-            <p>Have a question? Email us at&nbsp;<a href=""><b>lawsanaid@support .org</b></a> </p>
+
+        <div class="foot-abt">
+            <h2>About Lawsanaid</h2>
+            <a href="/index.html"><h3>Team</h3></a>
+            <a href="/index.html"><h3>Patners</h3></a>
+            <a href="/index.html"><h3>Mission</h3></a>
+            <a href="/index.html"><h3>Get Involved</h3></a>
+        </div>
+
+        <div class="contact-footer">
+            <div class="mail">
+                <h2>Contacts</h2>
+                <img src="image/footer-icon.png" alt="">
+                <h3>Have a question? Email us at <a href=""><b>lawsanaid@support .org</b></a> </h3>
+            </div>
+            <div class="address">
+                <h2>Company address</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Facilis accusamus sint perspiciatis optio doloribus suscipit
+                </p>
+            </div>
         </div>
     </div>
+
+    <script src="/Js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
 
