@@ -128,7 +128,7 @@ body{
     }
 
     .header-logo{
-        padding: 4rem 0 2.5rem 5rem;  
+        padding: 5rem 0 2.5rem 5rem;  
         margin: auto;
     }
 }
@@ -168,7 +168,7 @@ body{
     }
 
     .header-logo{
-        padding: 4rem 0 2.5rem 10rem;  
+        padding: 5rem 0 2.5rem 10rem;  
         margin: auto;
     }
 }
@@ -194,8 +194,8 @@ body{
 }
 
 .header-logo img{
-    width: 2.5rem;
-    height: 3.7rem;
+    width: 1.5rem;
+    height: 2.7rem;
 }
 
 .toggler{
@@ -223,7 +223,18 @@ body{
     height: 1.2rem;
     background-color: var(--primary-color);
     border-radius: 50%;
+    display: none;
 }
+
+.menu-desktop li a h3:hover{
+    font-weight: 600;
+}
+
+.menu-desktop li a:active{
+    font-weight: 600;
+}
+
+
 
 @media (min-width:1024px) and (max-width:1228px) {
     .menu-desktop h3{
@@ -240,7 +251,7 @@ body{
     .menu-wrap{
         position: fixed;
         top: 1rem;
-        left: 40%;
+        left: 50%;
         z-index: 1;
         width: 40%;
     }
@@ -532,6 +543,11 @@ button{
     .button{
         justify-content: left;
     }
+
+    .header-logo img{
+        width: 2.5rem;
+        height: 3.7rem;
+    }
     
 }
 
@@ -650,6 +666,10 @@ button{
     .mission-img img{
         width: 18rem;
     }
+    .header-logo img{
+        width: 2.5rem;
+        height: 3.7rem;
+    }
 }
 
 @media screen and (min-width:1578px) {
@@ -667,6 +687,10 @@ button{
 
     .mission-text hr{
         height: 5px;
+    }
+    .header-logo img{
+        width: 2.5rem;
+        height: 3.7rem;
     }
 
 }
@@ -706,6 +730,11 @@ button{
     height: 4.3rem;
     border: none;
     margin-bottom: .3rem;
+    text-align: center;
+}
+
+.part-form input{
+    outline: 0;
 }
 
 
@@ -858,6 +887,9 @@ button{
     border: solid 2px var(--secondary-color);
     border-right: none;
     height: 4.3rem;
+    text-align: center;
+    transition: border-color 0.5s;
+
 }
 
 .sign-up-form input::placeholder {
@@ -866,6 +898,11 @@ button{
     font-weight: 600;
     color: lightgray;
     padding-left: 3rem;
+}
+
+.sign-up-form input:focus{
+    border-color: var(--primary-color);
+    outline: 0;
 }
 
 .sign-btn{
@@ -975,8 +1012,12 @@ button{
 }
 
 .message-img{
-    width: 70%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
+
 
 .message-flex{
     display: flex;
@@ -1001,8 +1042,16 @@ button{
         gap: 4rem;
     }
 
+    .donate-message-text p{
+        width: 80%;
+    }
+
     .message-img{
         width: 40%;
+    }
+
+    .donate-img{
+        width: 30%;
     }
    
 }
@@ -1014,6 +1063,7 @@ button{
     .message-flex{
         padding-top: 15rem;
     }
+
 }
 
 @media screen and (min-width:1578px) {
@@ -1023,6 +1073,10 @@ button{
     }
     .message-flex{
         padding-top: 15rem;
+    }
+
+    .message-img{
+        width: 25%;
     }
 }
 
@@ -2054,6 +2108,10 @@ button{
     padding: 2rem;
 }
 
+.donate-involved{
+    margin-top: 2rem;
+}
+
 .card {
     position: relative;
     width: calc(100% - 2rem); /* Adjusted width to accommodate space */
@@ -2115,6 +2173,9 @@ button{
     .involved{
         margin-top: 50rem;
     }
+    .donate-involved{
+        margin-top: 2rem;
+    }
 }
 
 @media screen and (min-width:900px){
@@ -2156,6 +2217,10 @@ button{
     background-size: cover;
     background-repeat: no-repeat;
     padding: 8rem 0 4rem 0;
+}
+
+.index-promt{
+    margin-top: 3rem;
 }
 
 
@@ -2209,6 +2274,27 @@ button{
     background-color: var(--secondary-color);
 }
 
+.popup{
+    width: 100%;
+    background: #fff;
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: #333;
+    visibility: hidden;
+    transition: transform .4s, top .4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 @media screen and (min-width:900px){
     .promt{
         display: flex;
@@ -2256,12 +2342,31 @@ button{
 
 .question-message-flex textarea{
     width: 33rem;
+    padding: 2rem 3rem;
+    border: solid 1px lightgray;
+    border-radius: .5rem;
+    transition: border-color .5s;
+}
+
+.question-message-flex textarea:focus{
+    outline: 0;
+    border-color: var(--primary-color);
 }
 
 .question-flex input{
     height: 3rem;
     width: 15rem;
+    padding-left: 3rem;
+    border: solid 1px lightgray;
+    border-radius: .5rem;
+    transition: border-color .5s;
 }
+
+.question-flex input:focus{
+    outline: 0;
+    border-color: var(--primary-color);
+}
+
 
 @media screen and (min-width:900px) {
     .question{
@@ -2495,5 +2600,292 @@ button{
 
     .story-text p{
         width: 45pc;
+    }
+}
+
+
+
+
+
+
+/* Donate page  */
+.donate-header{
+    padding: 2rem;
+    background-color: var(--secondary-color); 
+    margin-top: 8rem;
+}
+
+.donate-text{
+    text-align: center;
+    color: #fff;
+}
+
+.donate-text h1{
+    color: #fff;
+}
+
+.donate-header img{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+@media screen and (min-width: 900px) {
+    .donate-header{
+        margin-top: 13rem;
+    }
+
+    .donate-text p{
+        width: 35pc;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .donate-header {
+        padding: 2rem 5rem 2rem 5rem;
+    }
+
+    .donate-text p{
+        width: 50pc;
+        padding-bottom: 2rem;
+    }
+
+}
+
+@media screen and (min-width: 1578px) {
+    .donate-header {
+        padding: 2rem 10rem 2rem 10rem;
+    }
+
+    .donate-text p{
+        width: 60pc;
+        padding-bottom: 2rem;
+    }
+}
+
+
+
+
+
+.donate-key{
+    margin-top: 8rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.donate-key h2{
+    font-weight: 700;
+    letter-spacing: .5rem;
+    padding: 1rem 0 0 0;
+}
+
+.donate-key h3{
+    letter-spacing: .5rem;
+    padding: 1rem 0 2rem 0;
+    font-weight: 600;
+}
+
+
+.copy-text{
+    position: relative;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+}
+
+.copy-text input.text{
+    font-family: "Poppins", sans-serif;  
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 10px;
+    color: #000;
+    border: none;
+    outline: none;
+    letter-spacing: .5rem;
+    text-align: center;
+    margin: auto;
+}
+
+.copy-text button{
+    padding: 1rem;
+    color: #fff;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    outline: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    margin-top: -.1rem;
+}
+
+.copy-text button img{
+    width: 80%;
+}
+
+.copy-text button:active{
+    background: var(--secondary-color);
+}
+
+.copy-text button::before{
+    content: "copied";
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: #5c81dc;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    display: none;
+}
+
+.copy-text button::after{
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 10px;
+    height: 10px;
+    background: #5c81dc;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.copy-text.active button::before,
+.copy-text.active button::before{
+    display: block;
+}
+
+@media screen and (min-width: 900px) {
+    .copy-text input.text{
+        font-family: "Poppins", sans-serif;  
+        font-size: 2rem;
+        letter-spacing: 2rem;
+    }
+
+    .copy-text button{
+        padding: 1.5rem;
+        width: 5rem;
+        height: 5rem;
+        margin-top: 0;
+    }
+    
+    .copy-text button img{
+        width: 100%;
+    }
+
+    .donate-key p{
+        width: 40pc;
+        margin: auto;
+    }
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .donate-key {
+        padding: 2rem 5rem 2rem 5rem;
+    }
+
+    .donate-key p{
+        width: 60pc;
+    }
+
+}
+
+@media screen and (min-width: 1578px) {
+    .donate-key{
+        padding: 2rem 10rem 2rem 10rem;
+    }
+
+    .donate-key p{
+        width: 80pc;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.team{
+    margin-top: 10rem;
+    padding: 2rem;
+}
+
+.team-holder{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.team-flex{
+    display: flex;
+    gap: 2rem;
+}
+
+.team-flex img{
+    width: 50%;
+}
+
+.team-text{
+    margin-top: 2rem;
+}
+
+.team-text h3{
+    padding: .5rem 0 1rem 0;
+}
+
+.team-handle{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.team-handle img{
+    width: 5%;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 900px) {
+    .team-holder{
+        flex-direction: row;
+    }
+    .team-header-p{
+        width: 30pc;
+        padding-bottom: 2rem;
+    }
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .team {
+        padding: 2rem 5rem 2rem 5rem;
+    }
+    .team-header-p{
+        width: 50pc;
+    }
+}
+
+@media screen and (min-width: 1578px) {
+    .team {
+        padding: 2rem 10rem 2rem 10rem;
+    }
+
+    .team-flex img{
+        height: 80%;
+    }
+
+    .team-header-p{
+        width: 70pc;
     }
 }
