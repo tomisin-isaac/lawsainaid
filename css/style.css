@@ -56,6 +56,52 @@ button{
     cursor: pointer;
 }
 
+#loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  #loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #fff;
+    z-index: 1001;
+  }
+  
+  .section-left {
+    left: 0;
+  }
+  
+  .section-right {
+    right: 0;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  #content {
+    display: none;
+  }
+
 
 /* Typography for mobile screen starts here */
 h1,h2{
@@ -2274,25 +2320,8 @@ button{
     background-color: var(--secondary-color);
 }
 
-.popup{
-    width: 100%;
-    background: #fff;
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #333;
-    visibility: hidden;
-    transition: transform .4s, top .4s;
-}
-
-.open-popup{
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
+.donate-btn{
+    background-color: var(--secondary-color);
 }
 
 @media screen and (min-width:900px){
@@ -2814,12 +2843,44 @@ button{
 
 
 
+.team-header{
+    margin-top: 9rem;
+    padding: 2rem;
+}
+
+.team-text-header{
+    text-align: center;
+}
+
+.strength{
+    margin-top: -1rem;
+}
+
+.team-header img{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.team-header p{
+    font-weight: 700;
+}
+
+@media screen and (min-width: 900px) {
+    .team-header p{
+        width: 70%;
+        margin: auto;
+        padding-top: 1rem;
+    }
+}
 
 
 
 .team{
-    margin-top: 10rem;
     padding: 2rem;
+    margin-top: 3rem;
 }
 
 .team-holder{
@@ -2844,26 +2905,40 @@ button{
 
 .team-text h3{
     padding: .5rem 0 1rem 0;
+    font-weight: 700;
 }
 
 .team-handle{
     display: flex;
-    gap: 1rem;
+    gap: 0;
     margin-top: 2rem;
 }
 
 .team-handle img{
-    width: 5%;
+    width: 15%;
     cursor: pointer;
 }
 
 @media screen and (min-width: 900px) {
     .team-holder{
         flex-direction: row;
+        gap: 10rem;
     }
     .team-header-p{
         width: 30pc;
         padding-bottom: 2rem;
+    }
+
+    .team-holder{
+        margin-bottom: 4rem;
+    }
+
+    .last-team img{
+        width: 25%;
+    }
+
+    .last-team-text{
+        width: 25%;
     }
 }
 
@@ -2873,6 +2948,10 @@ button{
     }
     .team-header-p{
         width: 50pc;
+    }
+
+    .team-holder{
+        margin-bottom: 7rem;
     }
 }
 
@@ -2887,5 +2966,8 @@ button{
 
     .team-header-p{
         width: 70pc;
+    }
+    .team-holder{
+        margin-bottom: 10rem;
     }
 }

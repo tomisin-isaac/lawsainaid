@@ -158,9 +158,9 @@
                 efforts to promote inclusivity, provide support, and empower 
                 aspiring legal professionals. Here's how your donation can help:
             </p>
-            <a href="" class="anchor-promt">
-                <button class="primary-btn promt-btn2">
-                    <h3>Make A Donation</h3>
+            <a href="/donate.html" class="anchor-promt">
+                <button class="primary-btn promt-btn donate-btn">
+                    <h3>Make a Donation</h3>
                     <img src="/Icons/arrow.png" alt="right arrow"> 
                 </button>
             </a>
@@ -176,21 +176,24 @@
                 Do you have questions, comments? <br>
                 Do not hesitate to contact us and we will answer you quickly.
             </p>
-            <form action="">
+            <form action="https://formspree.io/f/xeqywppv" method="post">
                 <div class="question-flex">
                     <div>
                         <label for="name"><h3>Name</h3></label>
-                        <input id="name" type="text">
+                        <input id="name" type="text" name="name">
                     </div>
                     <div>
                         <label for="email"><h3>Email</h3></label>
-                        <input id="email" type="email">
+                        <input id="email" type="email" name="email">
                     </div>
                 </div>
                 <div class="question-message-flex">
-                    <label for="">Your Message</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <label for="message">Your Message</label>
+                    <textarea id="message"  name="message" cols="30" rows="10"></textarea>
                 </div>
+                <button type="submit" class="primary-btn">
+                    <h3>Submit</h3>
+                </button>
             </form>
         </div>
     </div>

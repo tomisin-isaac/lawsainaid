@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", function () {
+    // Hide loader and display content when page is fully loaded
+    window.onload = function () {
+      document.getElementById("loader-wrapper").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    };
+  });
+  
+
 document.addEventListener("DOMContentLoaded", function() {
     const collapsibles = document.querySelectorAll(".collapsible");
 
