@@ -2982,3 +2982,67 @@ button{
         margin-bottom: 10rem;
     }
 }
+
+
+
+/* GALLERY STARTS HERE  */
+.gallery{
+    width: 100vw;
+    height: 100vh;
+    margin-top: 10rem;
+    padding: 4rem;
+}
+
+.gallery-text{
+    text-align: center;
+}
+
+.gallery button{
+    width: auto;
+    margin: auto;
+}
+
+.gallery-pictures{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    animation: scroll 20s linear infinite;
+}
+
+.gallery-pictures img{
+    width: 50%;
+
+}
+
+@media screen and (min-width: 900px) {
+    .gallery {
+            padding: 8rem;
+    }
+    .gallery-pictures img {
+        width: 30%;
+
+    }
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .gallery {
+        padding-left: 10rem;
+        padding-right: 10rem;
+
+    }
+
+
+    .gallery-pictures img {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1578px) {
+.gallery-pictures img {
+        width: 20%;
+    }
+}
