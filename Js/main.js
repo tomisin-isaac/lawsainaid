@@ -1,3 +1,73 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const textElements = document.querySelectorAll('[data-tts="true"]');
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    const synth = window.speechSynthesis;
+    let voices = [];
+    let currentUtterance = null;
+    let currentIndex = 0;
+
+    function populateVoiceList() {
+        voices = synth.getVoices();
+    }
+
+    populateVoiceList();
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = populateVoiceList;
+    }
+
+    function speakText(text) {
+        if (currentUtterance) {
+            synth.cancel(); // Stop any ongoing speech
+        }
+
+        currentUtterance = new SpeechSynthesisUtterance(text);
+        currentUtterance.voice = voices[0]; // Select the first available voice
+        synth.speak(currentUtterance);
+
+        currentUtterance.onend = function () {
+            setTimeout(speakNextText, 200); // Delay of 200 milliseconds before reading the next element
+        };
+    }
+
+    function speakNextText() {
+        if (currentIndex < textElements.length) {
+            const textToRead = textElements[currentIndex].innerText.trim();
+            speakText(textToRead);
+            currentIndex++;
+        } else {
+            stopButton.style.display = 'none'; // Hide stop button when all text is read
+            startButton.style.display = 'block'; // Show start button again
+        }
+    }
+
+    // Start reading text when the start button is clicked
+    startButton.addEventListener('click', function () {
+        currentIndex = 0; // Reset to start from the beginning
+        startButton.style.display = 'none'; // Hide start button
+        speakNextText();
+        stopButton.style.display = 'block'; // Show stop button when reading starts
+    });
+
+    // Stop reading when the stop button is clicked
+    stopButton.addEventListener('click', function () {
+        synth.cancel(); // Stop current speech
+        stopButton.style.display = 'none'; // Hide stop button
+        startButton.style.display = 'block'; // Show start button again
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Hide loader and display content when page is fully loaded
+    window.onload = function () {
+      document.getElementById("loader-wrapper").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    };
+  });
+  
+
 document.addEventListener("DOMContentLoaded", function() {
     const collapsibles = document.querySelectorAll(".collapsible");
 
@@ -156,3 +226,13 @@ copyText.querySelector("button").addEventListener("click",function(){
         copyText.classList.remove("active");
     },2500)
 });
+
+
+
+
+
+
+
+
+
+

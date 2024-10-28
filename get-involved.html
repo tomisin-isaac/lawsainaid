@@ -22,20 +22,44 @@
                 <a href="/index.html"><img src="/image/logo.png" alt="logo"></a>
             </div>
         </div>
-        
+    
         <div class="menu-wrap">
             <input type="checkbox" class="toggler">
-            <div class="hamburger"><div></div></div>
+            <div class="hamburger">
+                <div></div>
+            </div>
             <div class="menu">
                 <div>
                     <div>
                         <ul class="menu-desktop">
-                            <li><a href="/index.html"><h3>Home</h3><div class="bubble"></div></a></li>
-                            <li><a href="/about.html"><h3>About Us</h3><div class="bubble"></div></a></li>
-                            <li><a href="/work.html"><h3>Our Work</h3><div class="bubble"></div></a></li>
-                            <li><a href="/team.html"><h3>Our Team</h3><div class="bubble"></div> </a></li>
-                            <li><a href="/get-involved.html"><h3>Get Involved</h3><div class="bubble"></div></a></li>
-                            <li><a href="/donate.html"><h3>Donate</h3><div class="bubble"></div></a></li>                        
+                            <li><a href="/index.html">
+                                    <h3>Home</h3>
+                                    <div class="bubble"></div>
+                                </a></li>
+                            <li><a href="/about.html">
+                                    <h3>About Us</h3>
+                                    <div class="bubble"></div>
+                                </a></li>
+                            <li><a href="/work.html">
+                                    <h3>Our Work</h3>
+                                    <div class="bubble"></div>
+                                </a></li>
+                            <li><a href="/team.html">
+                                    <h3>Our Team</h3>
+                                    <div class="bubble"></div>
+                                </a></li>
+                            <li><a href="/get-involved.html">
+                                    <h3>Get Involved</h3>
+                                    <div class="bubble"></div>
+                                </a></li>
+                            <li><a href="/gallery.html">
+                                    <h3>Gallery</h3>
+                                    <div class="bubble"></div>
+                                </a></li>
+                            <li><a href="/donate.html">
+                                    <h3>Donate</h3>
+                                    <div class="bubble"></div>
+                                </a></li>
                         </ul>
                     </div>
                 </div>
@@ -44,7 +68,7 @@
     </header>
 
     <div class="connect">
-        <div class="connect-text">
+        <div class="connect-text" id="section1" data-tts="true">
             <h1>Connect with LAWSANAID: Let's Make a Difference Together</h1>
             <p>
                 Thank you for your interest in reaching out to LAWSANAID. We 
@@ -63,7 +87,7 @@
     </div>
 
     <!-- Involved  -->
-    <div class="involved">
+    <div class="involved" id="section2" data-tts="true">
         <h3>LET’S MAKE SOME IMPACT</h3>
         <h1>Ways to get involved with us</h1>
         <div class="involved__card__scroll">
@@ -130,7 +154,7 @@
 
 
     <!-- promt  -->
-    <div class="promt">
+    <div class="promt" id="section3" data-tts="true">
         <div class="article promt-holder">
             <h2>Discover Community Articles</h2>
             <p>
@@ -158,9 +182,9 @@
                 efforts to promote inclusivity, provide support, and empower 
                 aspiring legal professionals. Here's how your donation can help:
             </p>
-            <a href="" class="anchor-promt">
-                <button class="primary-btn promt-btn2">
-                    <h3>Make A Donation</h3>
+            <a href="/donate.html" class="anchor-promt">
+                <button class="primary-btn promt-btn donate-btn">
+                    <h3>Make a Donation</h3>
                     <img src="/Icons/arrow.png" alt="right arrow"> 
                 </button>
             </a>
@@ -168,7 +192,7 @@
     </div>
 
     <!-- question  -->
-    <div class="question">
+    <div class="question" id="section4" data-tts="true">
         <img src="/image/question .png" alt="">
         <div class="question-form">
             <h1>Have a Question?</h1>
@@ -176,26 +200,29 @@
                 Do you have questions, comments? <br>
                 Do not hesitate to contact us and we will answer you quickly.
             </p>
-            <form action="">
+            <form action="https://formspree.io/f/xeqywppv" method="post">
                 <div class="question-flex">
                     <div>
                         <label for="name"><h3>Name</h3></label>
-                        <input id="name" type="text">
+                        <input id="name" type="text" name="name">
                     </div>
                     <div>
                         <label for="email"><h3>Email</h3></label>
-                        <input id="email" type="email">
+                        <input id="email" type="email" name="email">
                     </div>
                 </div>
                 <div class="question-message-flex">
-                    <label for="">Your Message</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <label for="message">Your Message</label>
+                    <textarea id="message"  name="message" cols="30" rows="10"></textarea>
                 </div>
+                <button type="submit" class="primary-btn">
+                    <h3>Submit</h3>
+                </button>
             </form>
         </div>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="section5" data-tts="true">
         <div class="contact-text">
             <h1>Contact <br>Information</h1>
             <p>
@@ -206,9 +233,8 @@
                 <div class="main">
                     <h2>Main Office:</h2>
                     <p>
-                        27 NW New Vexmont,<br>
-                        Portland, Oregon 97209+ <br>
-                        (123) 1800-567-8990
+                        Maitama Abuja <br>
+                        (234) 903-288-0274
                     </p>
                 </div>
                 <div class="hours">
@@ -222,53 +248,74 @@
         </div>
         <div class="map">
             <!-- Paste the Google Maps Embed API code here -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7925.465205551049!2d3.257442138511434!3d6.680011973260628!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b97735184094f%3A0x9f507b9857fde3d2!2sAlakuko%2C%20Lagos%20102213%2C%20Lagos!5e0!3m2!1sen!2sng!4v1714253201584!5m2!1sen!2sng"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31517.642289257037!2d7.472392524238906!3d9.090589349228717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a42a5e3f47d%3A0xa5b2f06d94fb9ecb!2sMaitama%2C%20Abuja%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1717196637853!5m2!1sen!2sng" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 
-     <!-- footer Starts here  -->
-     <div class="footer">
-        <div class="footer-logo">
-            <img src="image/footer-logo3.png" alt="">
-            <p>
-                Our work is ongoing, and we invite individuals, organizations, 
-                and allies who share our vision to get involved. Whether through 
-                mentorship, collaborative projects, or advocacy efforts, there's 
-                a role for everyone in contributing to a legal future that is 
-                truly inclusive and empowering.
-            </p>
-        </div>
-        
-        <div class="touch">
-            <h2>Stay  in touch</h2>
-            <a href="/index.html"><h3>News Feed</h3></a>
-            <a href="/index.html"><h3>linkedin</h3></a>
-            <a href="/index.html"><h3>Instagram</h3></a>
-            <a href="/index.html"><h3>Twitter</h3></a>
+    <!-- footer Starts here  -->
+    <div class="footer">
+        <div class="first-f-holder" id="section10" data-tts="true">
+            <div class="ulinks">
+                <h3>Useful Links</h3>
+                <div class="links">
+                    <a href=""><p>About Us</p></a>
+                    <a href=""><p>Contact Us</p></a>
+                    <a href=""><p>FAQS</p></a>
+                    <a href=""><p>Terms of Service</p></a>
+                    <a href=""><p>Privacy Policy</p></a>
+                </div>
+            </div>
+
+            <div class="ulinks">
+                <h3>Careers</h3>
+                <div class="links">
+                    <a href=""><p>Blog</p></a>
+                    <a href=""><p>Press</p></a>
+                    <a href=""><p>Partnership</p></a>
+                    <a href=""><p>Support</p></a>
+                    <a href=""><p>Help Center</p></a>
+                </div>
+            </div>
+
+            <div class="ulinks">
+                <h3>Resources</h3>
+                <div class="links">
+                    <a href=""><p>Events</p></a>
+                    <a href=""><p>Community</p></a>
+                    <a href=""><p>Social Media</p></a>
+                    <a href=""><p>Newsletter</p></a>
+                    <a href=""><p>Subscribe</p></a>
+                </div>
+            </div>
+
+            <div class="ulinkss">
+                <h3>Subscribe</h3>
+                <p>Join our community to receive update</p>
+                <div class="foot-sub">
+                    <input type="text">
+                    <button class="footer-btn">Subscribe</button>
+                </div>
+            </div>
         </div>
 
-        <div class="foot-abt">
-            <h2>About Lawsanaid</h2>
-            <a href="/index.html"><h3>Team</h3></a>
-            <a href="/index.html"><h3>Patners</h3></a>
-            <a href="/index.html"><h3>Mission</h3></a>
-            <a href="/index.html"><h3>Get Involved</h3></a>
-        </div>
-
-        <div class="contact-footer">
-            <div class="mail">
-                <h2>Contacts</h2>
-                <img src="image/footer-icon.png" alt="">
-                <h3>Have a question? Email us at <a href=""><b>lawsanaid@support .org</b></a> </h3>
+        <div class="second-f-holder">
+            <hr>
+            <div class="footer-logo-holder">
+                <div><img class="pfimg" src="image/footer-logo3.png" alt=""></div>
+                <div class="social-footer">
+                    <a href=""><img src="image/Group 50985.png" alt=""></a>
+                    <a href=""><img src="image/Group 50986.png" alt=""></a>
+                    <a href=""><img src="image/Group 50987.png" alt=""></a>
+                    <a href=""><img src="image/Group 50988.png" alt=""></a>
+                </div>
             </div>
-            <div class="address">
-                <h2>Company address</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Facilis accusamus sint perspiciatis optio doloribus suscipit
-                </p>
-            </div>
+            <hr>
+            <p class="reserved">@2024 Lawsanaid All Rights Reserved</p>
         </div>
     </div>
+
+    <button class="blind" id="startButton">Start Reading</button>
+    <button class="blind" id="stopButton" style="display: none;">Stop Reading</button>
     
 
     

@@ -30,6 +30,39 @@ span{
     --secondary-color: #161627;
 }
 
+
+
+.blind {
+    padding: 1rem 2rem;
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+    top: 7rem;
+    background-color: transparent;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+    border: none;
+    outline: none;
+}
+#startButton {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+#stopButton {
+    background-color: red;
+    color: white;
+}
+
+
+@media screen and (min-width:900px) {
+    .blind{
+        top: 12rem;
+    }
+}
+
+
+
+
 body{
     font-family: "Open Sans", sans-serif;
     font-family: "Poppins", sans-serif;
@@ -55,6 +88,52 @@ body{
 button{
     cursor: pointer;
 }
+
+#loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  #loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #fff;
+    z-index: 1001;
+  }
+  
+  .section-left {
+    left: 0;
+  }
+  
+  .section-right {
+    right: 0;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  #content {
+    display: none;
+  }
 
 
 /* Typography for mobile screen starts here */
@@ -141,13 +220,13 @@ body{
         color: #161627;
     }
     h1{
-        font-size: 4rem;
+        font-size: 3.5rem;
         font-weight: bold;
         font-style: normal;
     }
     
     h2{
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: bold;
         font-style: normal;
     }
@@ -774,10 +853,6 @@ button{
 
 @media screen and (min-width:900px) {
     .part{
-        background: url(../image/part-background.png);
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
         flex-direction: row;
         padding: 2rem;
         gap: 3rem;
@@ -809,7 +884,7 @@ button{
     .part{
         padding: 5rem;
         gap: 5rem;
-        height: 75rem;
+        height: 55rem;
     }
     .part img{
         position: relative;
@@ -827,7 +902,7 @@ button{
     .part{
         padding: 5rem 10rem 5rem 10rem;
         gap: 8rem;
-        height: 80rem;
+        height: 60rem;
     }
 
     .part img{
@@ -848,7 +923,7 @@ button{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 37.5rem;
+    height: 27.5rem;
     display: flex;
     align-items: center;
     align-content: center;
@@ -926,19 +1001,21 @@ button{
     .form-container{
         width: 80%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         border-radius: 1rem;
         gap: 1.3rem;
+        padding-left: 10rem;
     }  
     
     .news{
         display: block;
-        width: 30%;
+        width: 35%;
         height: 18rem;
         margin-top: -5rem;
-        justify-content: flex-end;
-        align-items: flex-end;
     }
+
+
+ 
 
 
     .sign-up-form input{
@@ -957,6 +1034,7 @@ button{
 @media (min-width:1242px) and (max-width:1578px){
     .form-container{
         height: 20rem;
+        padding-left: 20rem;
     }
     .sign-btn{
         margin-top: 0;
@@ -967,7 +1045,7 @@ button{
     }
 
     .news{
-        width: 30%;
+        width: 40%;
         height: 25rem;
     }
 
@@ -981,7 +1059,8 @@ button{
 
 @media screen and (min-width:1578px) {
     .form-container{
-        height: 24.3rem;
+        height: 24rem;
+        padding-left: 25rem;
     }
     .sign-btn{
         margin-top: 0;
@@ -993,8 +1072,9 @@ button{
     }
 
     .news{
-        width: 30%;
-        height: 29.5rem;
+        width: 43%;
+        height: 100%;
+        margin-top: -.1rem;
     }
 
     .form-holder h2{
@@ -1275,83 +1355,87 @@ button{
     padding: 2rem;
     background-color: #2D2D3D;
     color: white;
-    display: flex;
-    flex-direction: column;
 }
 
 .footer a{
     color: white;
 }
-.footer h2{
-    color: white;
-}
 
-
-
-.footer-logo{
+.first-f-holder{
     display: flex;
-    gap: 5rem;
+    justify-content: space-between;
 }
 
-.footer-logo img{
-    width: 7rem;
-    height: 3rem;
+.ulinks{
+    display: flex;
+    flex-direction: column;
+    /* gap: 2rem; */
+}
+.ulinks h3{
+    font-weight: 700;
+}
+
+.foot-sub{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.foot-sub input{
+    border-radius: 5rem;
+    border: none;
+    height: 2rem;
+    width: 100%;
+}
+
+.footer-btn{
+    width: 10rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background: var(--primary-color);
+    margin-bottom: 2rem;
+    outline: none;
+    border: none;
+}
+
+.second-f-holder{
+    margin-top: 5rem;
+}
+
+.pfimg{
+    width: 15%;
+}
+
+.footer-logo-holder{
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 1rem 0;
+    
+}
+
+.social-footer img{
+    width: 15%;
+    margin: 0 .2rem 0 .2rem;
+}
+
+.reserved{
+    margin-top: .5rem;
+    color: lightgray;
+    width: 200;
 }
 
 
-
-
-.touch{
-    margin-top: 4rem;
-}
-
-.touch h2{
-    padding-bottom: 1rem;
-}
-.touch a h3{
-    padding-bottom: 1rem;
-}
-.foot-abt h2{
-    padding-top: 4rem;
-    margin-bottom: 1rem;
-}
-.foot-abt a h3{
-    padding-bottom: 1rem;
-}
-
-.mail{
-    margin-bottom: 4rem;
-}
-
-.mail h2{
-    padding-bottom: 1rem;
-}
-
-.mail img{
-    width: 5%;
-}
-.contact-footer{
-    margin-top: 4rem;
-}
 
 @media screen and (min-width: 900px){
-    .footer{
-        display: flex;
+    .social-footer img {
+        width: 10%;
+        margin: 1rem .2rem 0 .2rem;
+    }
+
+    .ulinks {
         flex-direction: row;
-        justify-content: space-between;
-        gap: 5rem;
-    }
-
-    .footer p{
-        width: 15pc;
-    }
-
-    .footer-logo{
-        display: block;
-    }
-
-    .mail img{
-        width: 8%;
+        gap: 2rem;
     }
  
 }
@@ -1359,20 +1443,38 @@ button{
 @media (min-width: 1242px) and (max-width: 1578px) {
     .footer {
         padding: 2rem 5rem;
-        gap: 8rem;
     }
 
+    .footer-btn {
+        width: 14rem;
+        height: 4rem;
+        margin-bottom: 2rem;
+    }
 
+    .foot-sub input {
+        border-radius: 5rem;
+        border: none;
+        height: 4rem;
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 1578px) {
     .footer {
         padding: 2rem 10rem;
-        gap: 10rem;
     }
 
-    .footer p{
-        width: 25pc;
+    .footer-btn {
+        width: 14rem;
+        height: 4rem;
+        margin-bottom: 2rem;
+    }
+
+    .foot-sub input {
+        border-radius: 5rem;
+        border: none;
+        height: 4rem;
+        width: 100%;
     }
 }
 
@@ -1764,6 +1866,8 @@ button{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .elipse img{
@@ -1781,6 +1885,15 @@ button{
 @media (min-width:1242px) and (max-width:1578px){
     .volunteer{
         padding: 10rem 5rem 0 5rem;
+    }
+    
+        .elips-holder{
+        gap: 5rem;
+    }
+
+    .elipse p{
+        font-size: 1.2rem;
+        padding-top: .8rem;
     }
 
 }
@@ -2274,25 +2387,8 @@ button{
     background-color: var(--secondary-color);
 }
 
-.popup{
-    width: 100%;
-    background: #fff;
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: #333;
-    visibility: hidden;
-    transition: transform .4s, top .4s;
-}
-
-.open-popup{
-    visibility: visible;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
+.donate-btn{
+    background-color: var(--secondary-color);
 }
 
 @media screen and (min-width:900px){
@@ -2814,12 +2910,44 @@ button{
 
 
 
+.team-header{
+    margin-top: 9rem;
+    padding: 2rem;
+}
+
+.team-text-header{
+    text-align: center;
+}
+
+.strength{
+    margin-top: -1rem;
+}
+
+.team-header img{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.team-header p{
+    font-weight: 700;
+}
+
+@media screen and (min-width: 900px) {
+    .team-header p{
+        width: 70%;
+        margin: auto;
+        padding-top: 1rem;
+    }
+}
 
 
 
 .team{
-    margin-top: 10rem;
     padding: 2rem;
+    margin-top: 3rem;
 }
 
 .team-holder{
@@ -2844,26 +2972,40 @@ button{
 
 .team-text h3{
     padding: .5rem 0 1rem 0;
+    font-weight: 700;
 }
 
 .team-handle{
     display: flex;
-    gap: 1rem;
+    gap: 0;
     margin-top: 2rem;
 }
 
 .team-handle img{
-    width: 5%;
+    width: 15%;
     cursor: pointer;
 }
 
 @media screen and (min-width: 900px) {
     .team-holder{
         flex-direction: row;
+        gap: 10rem;
     }
     .team-header-p{
         width: 30pc;
         padding-bottom: 2rem;
+    }
+
+    .team-holder{
+        margin-bottom: 4rem;
+    }
+
+    .last-team img{
+        width: 25%;
+    }
+
+    .last-team-text{
+        width: 25%;
     }
 }
 
@@ -2873,6 +3015,10 @@ button{
     }
     .team-header-p{
         width: 50pc;
+    }
+
+    .team-holder{
+        margin-bottom: 7rem;
     }
 }
 
@@ -2887,5 +3033,224 @@ button{
 
     .team-header-p{
         width: 70pc;
+    }
+    .team-holder{
+        margin-bottom: 10rem;
+    }
+}
+
+
+
+/* GALLERY STARTS HERE  */
+.gallery{
+    width: 100vw;
+    /* height: 100vh; */
+    margin-top: 10rem;
+    padding: 4rem;
+}
+
+.gallery-text{
+    text-align: center;
+}
+
+.gallery button{
+    width: auto;
+    margin: auto;
+}
+
+.gallery-pictures{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    animation: scroll 20s linear infinite;
+}
+
+.gallery-pictures2{
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    animation: scroll 20s alternate infinite;
+}
+
+.gallery-pictures img{
+    width: 50%;
+
+}
+
+@media screen and (min-width: 900px) {
+    .gallery {
+            padding: 8rem;
+    }
+    .gallery-pictures img {
+        width: 30%;
+
+    }
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .gallery {
+        padding-left: 10rem;
+        padding-right: 10rem;
+
+    }
+
+
+    .gallery-pictures img {
+        width: 25%;
+    }
+}
+
+@media screen and (min-width: 1578px) {
+.gallery-pictures img {
+        width: 20%;
+    }
+}
+
+
+/* BLOG STATE HERE  */
+.blog{
+    margin-top: 6rem;
+    padding: 2rem;
+}
+
+.parent-post img{
+    padding-top: 2rem;
+    width: 100%;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    margin-top: -1rem;
+}
+.profile img{
+    width: 8%;
+}
+
+.blog-sibling{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    gap: 2rem;
+}
+.sibling-holder{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.sibling-holder img{
+    width: 60%;
+}
+
+.ps{
+    gap: .1rem;
+    margin-top: 1rem;
+}
+
+.ps img{
+    width: 20%;
+}
+
+
+@media screen and (min-width: 900px) {
+    .blog {
+        margin-top: 10rem;
+        padding: 2rem;
+    }
+
+    .blog-header{
+        display: flex;
+    }
+
+    .blog-header{
+        gap: 4rem;
+    }
+
+    .sibling-holder img{
+        width: 50%;
+    }
+    
+    .ps img {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .blog {
+        padding: 4rem 5rem 2rem 5rem;
+    }
+
+    .blog-sibling{
+        margin-top: -.5rem;
+    }
+}
+
+@media screen and (min-width: 1578px) {
+    .blog {
+        margin-top: 12rem;
+        padding: 2rem 10rem 2rem 10rem;
+    }
+
+    .profile img {
+        width: 5%;
+    }
+}
+
+
+.blog-cont{
+    padding: 2rem;
+}
+
+.blog-card img{
+    width: 100%;
+}
+
+.pc{
+    align-items: center;
+    align-content: center;
+}
+.pc img{
+    width: 8%;
+    margin-top: 3rem;
+}
+
+.blog-card{
+    margin-top: 2rem;
+}
+
+@media screen and (min-width: 900px) {
+    .blog-cont-holder{
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+@media (min-width: 1242px) and (max-width: 1578px) {
+    .blog-cont {
+        padding: 4rem 5rem 2rem 5rem;
+    }
+
+    .blog-cont-holder {
+        gap: 4rem;
+    }
+}
+
+@media screen and (min-width: 1578px) {
+    .blog-cont {
+        padding: 2rem 10rem 2rem 10rem;
+    }
+
+    .blog-cont-holder {
+        gap: 8rem;
     }
 }
